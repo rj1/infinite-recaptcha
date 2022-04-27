@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>captcha</title>
+    <link href="captcha.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container m-p noselect">
+      <div id="checkbox-window" class="checkbox-window m-p block">
+        <div class="checkbox-container m-p">
+          <button type="button" id="checkbox" class="checkbox m-p line-normal"></button>
+        </div>
+        <p class="im-not-a-robot m-p line-normal">I'm not a robot</p>
+        <img src="images/logo.png" class="captcha-logo line-normal" alt="">
+        <p class="checkbox-desc checkbox-name m-p line-normal">reCAPTCHA</p>
+        <p class="checkbox-desc m-p line-normal"><a href="#">Privacy</a> - <a href="#">Terms</a></p>
+        <img src="images/loading.gif" id="spinner" class="spinner m-p line-normal">
+      </div>
+      <div id="verify-window" class="verify-window">
+        <div class="verify-container">
+          <header class="verify-header">
+            <span class="verify-header-text-medium m-p block">Select all images with</span>
+            <span class="verify-header-text-big m-p block" id="captcha-name">kittens</span>
+            <span class="verify-header-text-medium m-p block"></span>
+          </header>
+          <main class="verify-main">
+            <div class="verify-area">
+              <table class="verify-tiles">
+                <tr>
+                  <td><img class="tile-unselected" onclick="clickTile(1)" id="1" src=""></td>
+                  <td><img class="tile-unselected" onclick="clickTile(2)" id="2" src=""></td>
+                  <td><img class="tile-unselected" onclick="clickTile(3)" id="3" src=""></td>
+                </tr>
+                <tr>
+                  <td><img class="tile-unselected" onclick="clickTile(4)" id="4" src=""></td>
+                  <td><img class="tile-unselected" onclick="clickTile(5)" id="5" src=""></td>
+                  <td><img class="tile-unselected" onclick="clickTile(6)" id="6" src=""></td>
+                </tr>
+                <tr>
+                  <td><img class="tile-unselected" onclick="clickTile(7)" id="7" src=""></td>
+                  <td><img class="tile-unselected" onclick="clickTile(8)" id="8" src=""></td>
+                  <td><img class="tile-unselected" onclick="clickTile(9)" id="9" src=""></td>
+                </tr>
+              </table>
+          </main>
+            </div>
+            <div class="error" id="error">Please select all matching images.</div>
+            <footer class="verify-container verify-footer">
+              <div class="verify-footer-left">
+                <button class="footer-left-button footer-left-button-reload"></button>
+                <button class="footer-left-button footer-left-button-audio"></button>
+                <button class="footer-left-button footer-left-button-info"></button>
+              </div>
+              <button type="button" class="verify-verify-button block" id="verify-verify-button">Verify</button>
+            </footer>
+        </div>
+        <img src="images/captcha_arrow.svg" alt="" class="verify-window-arrow" id="verify-window-arrow"/>
+      </div>
+      <script src="data.js"></script>
+      <script src="captcha.js"></script>
+      <script type="text/javascript">
+        clickDetection();
+        fillTiles()
+      </script>
+  </body>
+</html>
